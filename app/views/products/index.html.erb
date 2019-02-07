@@ -1,0 +1,8 @@
+<% cart.each do |p|%>
+    <li><%= p %></li>
+<% end if session[:cart]!=nil %>
+
+<%= form_tag add_path, method: :post %>
+<%= text_field_tag :product %>
+<%= submit_tag "add to cart"%>
+
