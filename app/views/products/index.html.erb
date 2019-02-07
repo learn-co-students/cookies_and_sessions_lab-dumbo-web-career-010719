@@ -1,0 +1,14 @@
+<h1>This is your cart </h1>
+<% if session[:cart] %>
+  <% session[:cart].each do |product| %>
+  <p><%= pluralize(session[:cart].count, 'Product') %> <%= product %></p>
+  <% end %>
+<% end %>
+
+<h1>Name an item to add</h1>
+<%=  form_tag post_products_path do %>
+<%= text_field_tag :product %>
+<%= submit_tag "add to cart" %>
+<% end %>
+
+<%# <%= button_to "go add something", add_product_path, method: :get %> %>
